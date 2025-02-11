@@ -1,0 +1,14 @@
+// 폴더에 있는 scss를 불러오는 파일입니다. 
+// section 아래에 해당하는 페이지 scss 파일을 만들고 use 해주세요~!!
+// setting에 있는 파일들은 코딩하기 조금 더 편하게 만든 파일입니다. ^-^
+// var은 전체 폰트와 각종 컬러 변수가 담겨있습니다. resets은 기본 css 리셋, common은 공통으로 사용하기 좋은 것들은 두었습니다.
+
+@charset "UTF-8";
+
+// setting
+@use "setting/vars";
+@use "setting/resets";
+@use "setting/common";
+
+// section
+@use "section/main";

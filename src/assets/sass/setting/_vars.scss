@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --mainfont: "BMJUA";
+
+  // 메인 컬러 
+  --red: #FF6D64;
+  --purple: #8378D9;
+  --blue: #77C0FF;
+  --yellow: #FFC70B;
+  --orange: #FF8C1A;
+  --green: #88C72E;
+  --white: #FAFAFA;
+  --black: #323E36;
+  --gray: #D9D9D9;
+  --none: #00000000;
+
+  // 폰트 세팅
+  color: var(--black);
+  font-family: var(--mainfont);
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+
+  // 폰트 최적화
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}

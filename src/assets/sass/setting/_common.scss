@@ -1,0 +1,34 @@
+button,
+a {
+    cursor: pointer;
+    background-color: var(--none);
+}
+
+body {
+    background-color: #404040;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >div>div {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 640px;
+        margin: 0 auto;
+        background-color: var(--gray);
+        height: 360px;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.none {
+    display: none !important;
+}
+
+input {
+    outline: none;
+}
