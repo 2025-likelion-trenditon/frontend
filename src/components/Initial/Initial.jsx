@@ -4,13 +4,19 @@ import Mypage from '../../assets/img/main_mypage.svg'
 import Food from '../../assets/img/initial_food.svg'
 import Place from '../../assets/img/initial_place.svg'
 import Play from '../../assets/img/initial_play.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Initial = () => {
+    const navigation = useNavigate()
+
+    const onBack = () => {
+        navigation(-1)
+    }
+
     return (
         <div className='Initial_wrap'>
             <div className="header">
-                <button><img src={Back} alt="back button" /></button>
+                <button onClick={() => { onBack() }}><img src={Back} alt="back button" /></button>
                 <h1>초성 맞히기</h1>
                 <Link to='/mypage'><img src={Mypage} alt="mypage" /></Link>
             </div>
