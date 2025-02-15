@@ -23,7 +23,7 @@ const RankCard = () => {
 
           {/* 점수 */}
           <div className="Score_wrap">
-            <p>{item.score}점</p>
+            <p>{item.score.toLocaleString()}점</p>
           </div>
         </div>
       ))}
