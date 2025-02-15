@@ -1,12 +1,17 @@
 import React from "react";
-import Mypage from "../../assets/img/main_mypage.svg";
 import Topbar from "../Topbar/Topbar";
-import { Link } from "react-router-dom";
+import RankCard from "./RankCard";
 
 const Rank = () => {
   return (
     <div className="Rank_wrap">
+      {/* 탑바 */}
       <Topbar title={"최고의 마녀 순위"} />
+
+      {/* 랭킹 */}
+      <div className="Rank_container">
+        <RankCard />
+      </div>
     </div>
   );
 };

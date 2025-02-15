@@ -1,4 +1,62 @@
 .Rank_wrap {
   background-color: #88c72e;
   padding: 15px;
+
+  .Rank_container {
+    background-color: #fafafa;
+
+    width: 610px;
+    height: 285px;
+    padding: 10px 10px 0px 10px;
+
+    border-radius: 10px;
+
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.Rank_card {
+  width: 590px;
+  height: 40px;
+
+  padding: 0 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  div {
+    width: 44px;
+    height: 40px;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .Info_wrap {
+    display: flex;
+    flex-direction: row;
+
+    width: 235px;
+  }
+
+  .Img_box {
+    width: 30px;
+    height: 30px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+  }
+
+  .Score_wrap {
+    min-width: 107px;
+
+    display: flex;
+    flex-direction: row;
+  }
 }

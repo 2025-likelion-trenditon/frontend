@@ -1,5 +1,5 @@
 import Mypage from "../../assets/img/main_mypage.svg";
-import Back from "../../assets/img/icon_backBtn.svg";
+import Back from "../../assets/img/topBar_backBtn.svg";
 import { Link } from "react-router-dom";
 
 const Topbar = ({ title }) => {
