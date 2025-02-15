@@ -31,14 +31,24 @@
   justify-content: space-between;
   align-items: center;
 
-  div {
+  .Rank_img {
     width: 44px;
     height: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+
+    > p {
+      color: #fafafa;
+      position: relative;
+      bottom: 50%;
     }
   }
 
