@@ -15,6 +15,7 @@
 
     display: flex;
     flex-direction: column;
+
     gap: 10px;
   }
 }
@@ -27,6 +28,8 @@
 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   div {
     width: 44px;
@@ -42,8 +45,13 @@
   .Info_wrap {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     width: 235px;
+
+    > div {
+      margin-right: 10px;
+    }
   }
 
   .Img_box {
@@ -58,5 +66,7 @@
 
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
