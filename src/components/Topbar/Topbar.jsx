@@ -14,7 +14,7 @@ const Topbar = ({ title }) => {
 
         <div>{title}</div>
 
-        <Link to="/mypage">
+        <Link to="/mypage" className="mypage_btn">
           <img src={Mypage} alt="mypage" />
         </Link>
       </div>
