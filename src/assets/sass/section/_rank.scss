@@ -47,10 +47,18 @@
     flex-direction: row;
     align-items: center;
 
-    width: 235px;
+    min-width: 235px;
 
     > div {
       margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    > p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
     }
   }
 

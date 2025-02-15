@@ -18,7 +18,7 @@ const RankCard = () => {
           {/* 사진 및 닉네임 */}
           <div className="Info_wrap">
             {item.image ? <img src={item.image} /> : <div className="Img_box"></div>}
-            <p>item.nickname</p>
+            <p>{item.nickname}</p>
           </div>
 
           {/* 점수 */}
