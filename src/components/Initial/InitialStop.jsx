@@ -1,7 +1,7 @@
 import React from 'react'
-import Delete from '../../assets/img/initial_delete.svg'
-import Stop from '../../assets/img/initial_stop.svg'
-import Going from '../../assets/img/initial_going.svg'
+import Delete from '../../assets/img/initial/initial_delete.svg'
+import Stop from '../../assets/img/initial/initial_stop.svg'
+import Going from '../../assets/img/initial/initial_going.svg'
 import { useNavigate } from 'react-router-dom'
 
 const InitialStop = ({ setStop }) => {

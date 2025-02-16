@@ -1,5 +1,5 @@
 import React from 'react'
-import Mypage from '../../assets/img/main_mypage.svg'
+import Mypage from '../../assets/img/main/main_mypage.svg'
 import { Link } from 'react-router-dom'
 
 const Main = () => {

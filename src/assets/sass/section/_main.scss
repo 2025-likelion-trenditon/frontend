@@ -44,11 +44,11 @@
         }
 
         .clothes {
-            background-image: url(../../img/main_clothes.png);
+            background-image: url(../../img/main/main_clothes.png);
         }
 
         .inital {
-            background-image: url(../../img/main_initial.png);
+            background-image: url(../../img/main/main_initial.png);
             background-color: var(--purple);
         }
 
@@ -75,12 +75,12 @@
 
             .guide {
                 background-color: var(--yellow);
-                background-image: url(../../img/main_guide.png);
+                background-image: url(../../img/main/main_guide.png);
             }
 
             .rank {
                 background-color: var(--green);
-                background-image: url(../../img/main_rank.png);
+                background-image: url(../../img/main/main_rank.png);
             }
         }
     }

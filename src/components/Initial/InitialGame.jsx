@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Backwhite from '../../assets/img/initial_backwhite.svg'
+import Backwhite from '../../assets/img/initial/initial_backwhite.svg'
 import InitialStop from './InitialStop'
 import InitialGuide from './InitialGuide'
 import InitialResult from './InitialResult'

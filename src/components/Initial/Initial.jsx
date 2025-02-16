@@ -1,9 +1,9 @@
 import React from 'react'
-import Back from '../../assets/img/initial_back.svg'
-import Mypage from '../../assets/img/main_mypage.svg'
-import Food from '../../assets/img/initial_food.svg'
-import Place from '../../assets/img/initial_place.svg'
-import Play from '../../assets/img/initial_play.svg'
+import Back from '../../assets/img/initial/initial_back.svg'
+import Mypage from '../../assets/img/main/main_mypage.svg'
+import Food from '../../assets/img/initial/initial_food.svg'
+import Place from '../../assets/img/initial/initial_place.svg'
+import Play from '../../assets/img/initial/initial_play.svg'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Initial = () => {

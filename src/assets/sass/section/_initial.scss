@@ -38,17 +38,17 @@
 
         .food {
             background-color: #FF7293;
-            background-image: url(../../img/initial_foodimg.png);
+            background-image: url(../../img/initial/initial_foodimg.png);
         }
 
         .place {
             background-color: var(--blue);
-            background-image: url(../../img/initial_placeimg.png);
+            background-image: url(../../img/initial/initial_placeimg.png);
         }
 
         .play {
             background-color: var(--orange);
-            background-image: url(../../img/initial_playimg.png);
+            background-image: url(../../img/initial/initial_playimg.png);
         }
     }
 }
@@ -71,7 +71,7 @@
         border: 3px solid #51262A;
         background-size: cover;
         background-position: center;
-        background-image: url(../../img/initial_gamebackground.png);
+        background-image: url(../../img/initial/initial_gamebackground.png);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -193,7 +193,7 @@
         width: 400px;
         height: 286px;
         padding: 50px 30px 0 50px;
-        background-image: url(../../img/initial_guide.png);
+        background-image: url(../../img/initial/initial_guide.png);
         background-size: cover;
 
         p {
@@ -229,7 +229,7 @@
                 width: 144px;
                 background-size: cover;
                 background-position: bottom;
-                background-image: url(../../img/initial_catbtn.png);
+                background-image: url(../../img/initial/initial_catbtn.png);
                 padding-top: 30px;
                 color: var(--white);
                 font-size: 15px;
