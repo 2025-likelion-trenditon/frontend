@@ -107,4 +107,80 @@
             color: var(--white);
         }
     }
+
+    .up {
+        z-index: 11;
+    }
+}
+
+.ClothesGuide_wrap {
+    z-index: 11;
+
+    .main {
+        background-image: url(../../img/clothes/guide.png);
+
+        .red {
+            color: var(--red);
+        }
+
+        >div {
+            button {
+                background-image: url(../../img/clothes/button.png);
+            }
+        }
+    }
+}
+
+.ClothesResult_wrap {
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fafafa85;
+
+    .main {
+        background-size: cover;
+        background-image: url(../../img/clothes/say.png);
+        padding-top: 15px;
+        display: flex;
+
+        .say {
+            top: 94px;
+            left: 85px;
+            position: absolute;
+            font-size: 16px;
+            text-align: center;
+
+            .red {
+                color: var(--red);
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    .btn_box {
+        width: 100%;
+        position: absolute;
+        bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 5;
+        left: 0;
+        padding: 0 15px;
+
+        button {
+            display: flex;
+            justify-content: center;
+            background-size: cover;
+            align-items: center;
+            background-position: center;
+            background-image: url(../../img/clothes/button.png);
+            width: 144px;
+            height: 110px;
+            padding-top: 55px;
+            font-size: 15px;
+            color: var(--white);
+        }
+    }
 }

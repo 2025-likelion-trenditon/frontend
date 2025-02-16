@@ -12,34 +12,39 @@ import Hat03 from '../../assets/img/clothes/hat_03.png'
 import Dress from './Parts/Dress'
 import Hats from './Parts/Hats'
 import Skin from './Parts/Skin'
-import { useNavigate } from 'react-router-dom'
+import ClothesGuide from './ClothesGuide'
+import InitialStop from '../Initial/InitialStop'
+import ClothesResult from './ClothesResult'
 
 const Clothes = () => {
+    const [guide, setGuide] = useState(false)
+    const [stop, setStop] = useState(false)
     const [skin, setSkin] = useState(Cha01)
     const [dress, setDress] = useState()
     const [hat, setHat] = useState()
-    const navigation = useNavigate()
-
-    const onBack = () => {
-        navigation(-1)
-    }
+    const [done, setDone] = useState(false)
 
     return (
-        <div className='Clothes_wrap'>
-            <button onClick={() => { onBack() }}><img src={Back} alt="back button" /></button>
-            <Dress setDress={setDress} Clo01={Clo01} Clo02={Clo02} Clo03={Clo03} />
-            <Hats setHat={setHat} Hat01={Hat01} Hat02={Hat02} Hat03={Hat03} />
-            <Skin setSkin={setSkin} Cha01={Cha01} Cha02={Cha02} Cha03={Cha03} />
-            <div className="main">
-                <img className='hat' src={hat} alt="" />
-                <img className='dress' src={dress} alt="" />
-                <img className='character' src={skin} alt="" />
+        <>
+            <div className='Clothes_wrap'>
+                <button onClick={() => { setStop(true) }}><img src={Back} alt="back button" /></button>
+                <Dress setDress={setDress} Clo01={Clo01} Clo02={Clo02} Clo03={Clo03} />
+                <Hats setHat={setHat} Hat01={Hat01} Hat02={Hat02} Hat03={Hat03} />
+                <Skin setSkin={setSkin} Cha01={Cha01} Cha02={Cha02} Cha03={Cha03} />
+                <div className="main">
+                    <img className='hat' src={hat} alt="" />
+                    <img className='dress' src={dress} alt="" />
+                    <img className='character' src={skin} alt="" />
+                </div>
+                <div className='btn_box'>
+                    <button onClick={() => { setSkin(Cha01); setDress(); setHat() }}>다시하기</button>
+                    <button onClick={() => { setDone(true) }}>완료</button>
+                </div>
             </div>
-            <div className='btn_box'>
-                <button onClick={() => { setSkin(Cha01); setDress(); setHat() }}>다시하기</button>
-                <button>완료</button>
-            </div>
-        </div>
+            {guide ? (<ClothesGuide setGuide={setGuide} />) : (<></>)}
+            {stop ? (<InitialStop setStop={setStop} />) : (<></>)}
+            {done ? (<ClothesResult hat={hat} dress={dress} skin={skin}/>) : (<></>)}
+        </>
     )
 }
 
