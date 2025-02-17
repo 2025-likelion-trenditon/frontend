@@ -1,6 +1,6 @@
 import React from "react";
 import Topbar from "../Topbar/Topbar";
-import MypageImg from "../../assets/img/main_mypage.svg";
+import MypageImg from "../../assets/img/main/main_mypage.svg";
 
 export const USER = {
   result: {
