@@ -1,0 +1,94 @@
+.Rank_wrap {
+  background-color: #88c72e;
+  padding: 15px;
+
+  .Rank_container {
+    background-color: #fafafa;
+
+    width: 610px;
+    height: 285px;
+    padding: 10px 10px 0px 10px;
+
+    border-radius: 10px;
+
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
+
+.Rank_card {
+  width: 590px;
+  height: 40px;
+
+  padding: 0 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .Rank_img {
+    width: 44px;
+    height: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    > p {
+      color: #fafafa;
+      position: relative;
+      bottom: 50%;
+    }
+  }
+
+  .Info_wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    min-width: 235px;
+
+    > div {
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    > p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+    }
+  }
+
+  .Img_box {
+    width: 30px;
+    height: 30px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+  }
+
+  .Score_wrap {
+    min-width: 107px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  p {
+    letter-spacing: 0;
+  }
+}
