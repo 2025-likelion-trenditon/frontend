@@ -7,6 +7,7 @@ import Guide from './components/Guide/Guide'
 import Initial from './components/Initial/Initial'
 import Rank from './components/Rank/Rank'
 import InitialGame from './components/Initial/InitialGame'
+import Login from './components/User/Login'
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path='/' element={<Main />}></Route>
                 <Route path='/clothes' element={<Clothes />}></Route>
                 <Route path='/guide' element={<Guide />}></Route>
+                <Route path='/login' element={<Login />}></Route>
 
                 <Route path='/initial' element={<Initial />}></Route>
                 <Route path='/initialgame' element={<InitialGame />}></Route>
