@@ -88,6 +88,11 @@
 
             h1 {
                 font-size: 55px;
+                text-shadow:
+                    -3px -3px 0 #51262A,
+                    3px -3px 0 #51262A,
+                    -3px 3px 0 #51262A,
+                    3px 3px 0 #51262A;
             }
         }
 
@@ -308,7 +313,7 @@
         >div {
             display: flex;
             justify-content: space-between;
-        
+
             button {
                 padding-top: 10px;
             }
