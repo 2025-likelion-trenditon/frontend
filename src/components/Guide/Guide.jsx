@@ -1,7 +1,8 @@
 import {useNavigate} from "react-router-dom";
 import {ReactComponent as Guide_main} from "../../assets/img/main/main_mypage.svg";
 import {ReactComponent as BackButton} from "../../assets/img/guide/BackButton.svg";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const initialDummy = [
     {initial: "다낭", content: "다낭은 아름다운 해변과 바나힐, 용다리로 유명한 베트남 휴양 도시에요."},
@@ -13,6 +14,32 @@ const initialDummy = [
 const Guide = () => {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState("cloth");
+    const [initialList, setInitialList] = useState([]);
+    const [dressList, setDressList] = useState([]);
+
+    const getInitialList = async () => {
+        try {
+            const result = await axios.get('https://kavatar-api.duckdns.org/initial-consonant/3');
+            setInitialList(result.data.data.initialConsonantResults);
+
+        } catch (error) {
+            console.log("도감 조회 에러", error);
+        }
+    }
+
+    const getDressList = async () => {
+        try {
+            const result = await axios.get('https://kavatar-api.duckdns.org/dress/3');
+            setDressList(result.data.data.dressInfoResponses);
+        } catch (error) {
+            console.log("도감 조회 에러", error);
+        }
+    }
+
+    useEffect(() => {
+        getInitialList();
+        getDressList();
+    }, []);
 
     return (
         <div className="guide_wrapper">
@@ -42,11 +69,11 @@ const Guide = () => {
                     {selectedCategory === "cloth" ? (
                         <div></div>
                     ) : (
-                        initialDummy.map((item, index) => (
-                            <div key={index} className="guide_main_section_initial_container">
-                                <p>{item.initial}</p>
+                        initialList.map((item) => (
+                            <div key={item.initialConsonantId} className="guide_main_section_initial_container">
+                                <p>{item.question}</p>
                                 <br/>
-                                <p>: {item.content}</p>
+                                <p>: {item.explanation}</p>
                             </div>
                         ))
                     )}
