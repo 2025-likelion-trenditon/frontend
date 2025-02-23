@@ -23,20 +23,24 @@ const Mypage = () => {
   const [uploadImg, setUploadImg] = useState(""); // 업로드한 이미지 url
   const { id } = useParams();
 
-  useEffect(() => {
-    const getMemberInfo = async () => {
-      try {
-        const response = await axios.get(`https://kavatar-api.duckdns.org/members/3`); // id로 수정 예정
-        setUserData(response.data);
-      } catch (error) {
-        console.log("회원 정보 조회 중 에러 발생", error);
-      }
-    };
+  const getMemberInfo = async () => {
+    try {
+      const response = await axios.get(`https://kavatar-api.duckdns.org/members/3`); // id로 수정 예정
+      setUserData(response.data);
 
+      if (response.data.data.profileImageUrl) {
+        setUploadImg(response.data.data.profileImageUrl);
+      }
+    } catch (error) {
+      console.log("회원 정보 조회 중 에러 발생", error);
+    }
+  };
+
+  useEffect(() => {
     getMemberInfo();
   }, []);
 
-  const handleImgChange = (event) => {
+  const handleImgChange = async (event) => {
     if (event.target.files) {
       const file = event.target.files[0]; // 사용자가 선택한 파일
 
@@ -47,6 +51,30 @@ const Mypage = () => {
       };
 
       reader.readAsDataURL(file);
+
+      await postMemberImg(file);
+    }
+  };
+
+  // 변경된 이미지 저장
+  const postMemberImg = async (file) => {
+    try {
+      const formData = new FormData();
+      formData.append("multipartFile", file);
+
+      const response = await axios.post(`https://kavatar-api.duckdns.org/images/upload/3`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (response.data.data.convertImageUrl) {
+        setUploadImg(response.data.data.convertImageUrl);
+
+        await getMemberInfo();
+      }
+    } catch (error) {
+      console.log("사진 변경 중 오류 발생 ", error);
     }
   };
 

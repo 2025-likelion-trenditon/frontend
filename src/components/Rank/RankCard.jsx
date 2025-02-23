@@ -33,7 +33,13 @@ const RankCard = () => {
 
             {/* 사진 및 닉네임 */}
             <div className="Info_wrap">
-              {item.profileImageUrl ? <img src={item.profileImageUrl} /> : <div className="Img_box"></div>}
+              {item.profileImageUrl ? (
+                <div className="profileImg">
+                  <img src={item.profileImageUrl} />
+                </div>
+              ) : (
+                <div className="Img_box"></div>
+              )}
               <p>{item.nickname}</p>
             </div>
 
