@@ -16,10 +16,11 @@ const Guide = () => {
     const [selectedCategory, setSelectedCategory] = useState("cloth");
     const [initialList, setInitialList] = useState([]);
     const [dressList, setDressList] = useState([]);
+    const userId = JSON.parse(localStorage.getItem('userData')).id;
 
     const getInitialList = async () => {
         try {
-            const result = await axios.get('https://kavatar-api.duckdns.org/initial-consonant/3');
+            const result = await axios.get(`https://kavatar-api.duckdns.org/initial-consonant/${userId}`);
             setInitialList(result.data.data.initialConsonantResults);
 
         } catch (error) {
@@ -29,7 +30,7 @@ const Guide = () => {
 
     const getDressList = async () => {
         try {
-            const result = await axios.get('https://kavatar-api.duckdns.org/dress/3');
+            const result = await axios.get(`https://kavatar-api.duckdns.org/dress/${userId}`);
             setDressList(result.data.data.dressInfoResponses);
         } catch (error) {
             console.log("도감 조회 에러", error);
