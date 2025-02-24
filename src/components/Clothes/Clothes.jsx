@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Back from '../../assets/img/initial/initial_backwhite.svg';
 import Cha01 from '../../assets/img/clothes/character_light.png';
 import Cha02 from '../../assets/img/clothes/character_middle.png';
@@ -15,6 +15,7 @@ import Skin from './Parts/Skin';
 import ClothesGuide from './ClothesGuide';
 import InitialStop from '../Initial/InitialStop';
 import ClothesResult from './ClothesResult';
+import axios from 'axios';
 
 const Clothes = () => {
     const [guide, setGuide] = useState(false);
@@ -40,6 +41,21 @@ const Clothes = () => {
         if (type === 'dress') setDress(item);
         if (type === 'skin') setSkin(item); // 스킨도 추가
     };
+
+    useEffect(() => {
+        axios.get('https://kavatar-api.duckdns.org/dress/1')
+            .then((res) => {
+                const dressInfo = res.data.data.dressInfoResponses;
+                if (dressInfo.length > 0) {
+                    const lastItem = dressInfo[dressInfo.length - 1]; // 마지막 요소 가져오기
+                    setHat(lastItem.accessory);
+                    setDress(lastItem.singleDress);
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
 
 
     return (

@@ -84,6 +84,7 @@
     }
 
     .btn_box {
+        cursor: pointer;
         width: 100%;
         position: absolute;
         bottom: 15px;
@@ -140,13 +141,15 @@
 
     .main {
         background-size: cover;
+        height: 100%;
         background-image: url(../../img/clothes/say.png);
         padding-top: 15px;
         display: flex;
 
         .say {
-            top: 94px;
-            left: 85px;
+            width: 200px;
+            top: 90px;
+            left: 50px;
             position: absolute;
             font-size: 16px;
             text-align: center;
@@ -157,6 +160,25 @@
             }
         }
 
+        .hat,
+        .dress,
+        .character {
+            position: absolute;
+            display: flex;
+        }
+
+        .hat {
+            z-index: 14;
+        }
+
+        .dress {
+            z-index: 13;
+        }
+
+        .character {
+            z-index: 12;
+        }
+
     }
 
     .btn_box {
@@ -165,11 +187,12 @@
         bottom: 15px;
         display: flex;
         justify-content: space-between;
-        z-index: 5;
+        z-index: 16;
         left: 0;
         padding: 0 15px;
 
         button {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             background-size: cover;
