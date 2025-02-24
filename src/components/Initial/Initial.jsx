@@ -21,17 +21,17 @@ const Initial = () => {
                 <Link to='/mypage'><img src={Mypage} alt="mypage" /></Link>
             </div>
             <div className="main">
-                <Link to='/initialgame' className="food">
+                <Link to='/initialgame/food' className="food">
                     <img src={Food} alt="Food" />
                     <h1>전통 음식</h1>
                 </Link>
-                <Link to='/initialgame' className="place">
+                <Link to='/initialgame/region' className="place">
                     <img src={Place} alt="Place" />
-                    <h1>전통 음식</h1>
+                    <h1>유명 장소</h1>
                 </Link>
-                <Link to='/initialgame' className="play">
+                <Link to='/initialgame/traditional-game' className="play">
                     <img src={Play} alt="Play" />
-                    <h1>전통 음식</h1>
+                    <h1>전통 놀이</h1>
                 </Link>
             </div>
         </div>
