@@ -21,11 +21,14 @@ export const USER = {
 const Mypage = () => {
   const [userData, setUserData] = useState(null); // 회원 정보 관리
   const [uploadImg, setUploadImg] = useState(""); // 업로드한 이미지 url
-  const { id } = useParams();
+
+  const storedData = localStorage.getItem("userData"); // localStorage에서 userData 가져오기
+  const user = storedData ? JSON.parse(storedData) : null;
+  const id = user?.id || 3; // id 가져오기, 없는경우 기본값 3
 
   const getMemberInfo = async () => {
     try {
-      const response = await axios.get(`https://kavatar-api.duckdns.org/members/3`); // id로 수정 예정
+      const response = await axios.get(`https://kavatar-api.duckdns.org/members/${id}`);
       setUserData(response.data);
 
       if (response.data.data.profileImageUrl) {
@@ -62,7 +65,7 @@ const Mypage = () => {
       const formData = new FormData();
       formData.append("multipartFile", file);
 
-      const response = await axios.post(`https://kavatar-api.duckdns.org/images/upload/3`, formData, {
+      const response = await axios.post(`https://kavatar-api.duckdns.org/images/upload/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
