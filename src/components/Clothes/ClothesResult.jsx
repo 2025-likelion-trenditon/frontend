@@ -20,10 +20,13 @@ const ClothesResult = ({ hat, dress, skin, userId }) => {
     }, [hat, dress, skin]);
 
     const onClothes = () => {
+        console.log(skin)
+
         axios.post('https://kavatar-api.duckdns.org/dress', {
             "memberId": userId,
             "singleDress": dress,
             "accessory": hat,
+            "skinColor": skin,
             "point": score
         })
             .then((res) => {

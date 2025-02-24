@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Main from './components/Section/Main'
 import Mypage from './components/User/Mypage'
 import Clothes from './components/Clothes/Clothes'
@@ -13,19 +13,17 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Main />}></Route>
-                <Route path='/clothes' element={<Clothes />}></Route>
-                <Route path='/guide' element={<Guide />}></Route>
-                <Route path='/login' element={<Login />}></Route>
-
-                <Route path='/initial' element={<Initial />}></Route>
-                <Route path='/initialgame/:game' element={<InitialGame />}></Route>
-                
-                <Route path='/rank' element={<Rank />}></Route>
-                <Route path='/mypage' element={<Mypage />}></Route>
+                <Route path='/' element={<Main />} />
+                <Route path='/clothes' element={<Clothes />} />
+                <Route path='/guide' element={<Guide />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/initial' element={<Initial />} />
+                <Route path='/initialgame/:game' element={<InitialGame />} />
+                <Route path='/rank' element={<Rank />} />
+                <Route path='/mypage' element={<Mypage />} />
             </Routes>
         </BrowserRouter>
-    )
+    );
 }
 
-export default App
+export default App;

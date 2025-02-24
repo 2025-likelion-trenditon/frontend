@@ -31,7 +31,6 @@ const Guide = () => {
         try {
             const result = await axios.get(`https://kavatar-api.duckdns.org/dress/${userId}`);
             setDressList(result.data.data.dressInfoResponses);
-            console.log(result.data.data.dressInfoResponses)
         } catch (error) {
             console.log("도감 조회 에러", error);
         }
@@ -72,7 +71,7 @@ const Guide = () => {
                             <div className="clothes_box">
                                 <img className="accessory" src={item.accessory} alt="" />
                                 <img className="singleDress" src={item.singleDress} alt="" />
-                                <img className="skin" src={item.skin} alt="" />
+                                <img className="skinColor" src={item.skinColor} alt="" />
                             </div>
                         ))
                     ) : (

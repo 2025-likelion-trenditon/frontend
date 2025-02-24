@@ -40,7 +40,7 @@ const Clothes = () => {
 
         if (type === 'hat') setHat(item);
         if (type === 'dress') setDress(item);
-        if (type === 'skin') setSkin(item); // 스킨도 추가
+        if (type === 'skin') setSkin(item);
     };
 
     useEffect(() => {
@@ -51,6 +51,7 @@ const Clothes = () => {
                     const lastItem = dressInfo[dressInfo.length - 1]; // 마지막 요소 가져오기
                     setHat(lastItem.accessory);
                     setDress(lastItem.singleDress);
+                    setSkin(lastItem.skinColor)
                 }
             })
             .catch((err) => {

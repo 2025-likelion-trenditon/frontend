@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Mypage from '../../assets/img/main/main_mypage.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Main = () => {
+    const userId = JSON.parse(localStorage.getItem('userData') || '{}')?.id || '';
+    const navigation = useNavigate()
+
+    useEffect(() => {
+        if (!(userId)) {
+            navigation('/login')
+        }
+    }, [])
+
     return (
         <div className='Main_wrap'>
             <div className="header">
