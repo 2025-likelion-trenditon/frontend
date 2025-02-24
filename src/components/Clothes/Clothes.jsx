@@ -18,6 +18,7 @@ import ClothesResult from './ClothesResult';
 import axios from 'axios';
 
 const Clothes = () => {
+    const userId = JSON.parse(localStorage.getItem('userData')).id;
     const [guide, setGuide] = useState(false);
     const [stop, setStop] = useState(false);
     const [skin, setSkin] = useState(Cha01);
@@ -43,7 +44,7 @@ const Clothes = () => {
     };
 
     useEffect(() => {
-        axios.get('https://kavatar-api.duckdns.org/dress/1')
+        axios.get(`https://kavatar-api.duckdns.org/dress/${userId}`)
             .then((res) => {
                 const dressInfo = res.data.data.dressInfoResponses;
                 if (dressInfo.length > 0) {
@@ -84,7 +85,7 @@ const Clothes = () => {
 
             {guide && <ClothesGuide setGuide={setGuide} />}
             {stop && <InitialStop setStop={setStop} />}
-            {done && <ClothesResult hat={hat} dress={dress} skin={skin} />}
+            {done && <ClothesResult userId={userId} hat={hat} dress={dress} skin={skin} />}
         </>
     );
 };

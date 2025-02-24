@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
 const InitialGame = () => {
+    const userId = JSON.parse(localStorage.getItem('userData')).id;
     const params = useParams()
     const [answer, setAnswer] = useState('')
     const [stop, setStop] = useState(false)
@@ -23,7 +24,7 @@ const InitialGame = () => {
         }
 
         axios.post('https://kavatar-api.duckdns.org/initial-consonant', {
-            memberId: '1',
+            memberId: userId,
             initialConsonantId: initialConsonantId,
             userAnswer: answer
         })

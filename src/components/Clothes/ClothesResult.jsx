@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ClothesResult = ({ hat, dress, skin }) => {
+const ClothesResult = ({ hat, dress, skin, userId }) => {
     const [score, setScore] = useState(0);
     const navigation = useNavigate();
 
@@ -21,7 +21,7 @@ const ClothesResult = ({ hat, dress, skin }) => {
 
     const onClothes = () => {
         axios.post('https://kavatar-api.duckdns.org/dress', {
-            "memberId": 1,
+            "memberId": userId,
             "singleDress": dress,
             "accessory": hat,
             "point": score
