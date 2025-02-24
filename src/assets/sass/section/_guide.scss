@@ -45,6 +45,29 @@
         border-radius: 10px;
         width: 100%;
       }
+
+      .clothes_box {
+        background-color: var(--white);
+        border-radius: 10px;
+        width: 32%;
+        height: 108px;
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 100%;
+        }
+
+        .accessory, .singleDress {
+          display: flex;
+          z-index: 3;
+        }
+
+        .skin {
+          display: flex;
+          z-index: 2;
+        }
+      }
     }
   }
 }
