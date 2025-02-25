@@ -4,13 +4,6 @@ import { ReactComponent as BackButton } from "../../assets/img/guide/BackButton.
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const initialDummy = [
-    { initial: "다낭", content: "다낭은 아름다운 해변과 바나힐, 용다리로 유명한 베트남 휴양 도시에요." },
-    { initial: "다낭", content: "다낭은 아름다운 해변과 바나힐, 용다리로 유명한 베트남 휴양 도시에요." },
-    { initial: "다낭", content: "다낭은 아름다운 해변과 바나힐, 용다리로 유명한 베트남 휴양 도시에요." },
-    { initial: "다낭", content: "다낭은 아름다운 해변과 바나힐, 용다리로 유명한 베트남 휴양 도시에요." },
-];
-
 const Guide = () => {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState("cloth");
@@ -22,6 +15,7 @@ const Guide = () => {
         try {
             const result = await axios.get(`https://kavatar-api.duckdns.org/initial-consonant/${userId}`);
             setInitialList(result.data.data.initialConsonantResults);
+            console.log(result.data.data)
         } catch (error) {
             console.log("도감 조회 에러", error);
         }
@@ -77,7 +71,7 @@ const Guide = () => {
                     ) : (
                         initialList.map((item) => (
                             <div key={item.initialConsonantId} className="guide_main_section_initial_container">
-                                <p>{item.question}</p>
+                                <p>{item.answer}</p>
                                 <br />
                                 <p>: {item.explanation}</p>
                             </div>
